@@ -1,0 +1,113 @@
+﻿<!--<Version 1.0.0>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice for Reservation</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            table td, table th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            table th {
+                background-color: #f2f2f2;
+                text-align: left;
+            }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .invoice-details {
+            margin-top: 30px;
+        }
+
+            .invoice-details td:first-child {
+                width: 60%;
+            }
+
+            .invoice-details td:last-child {
+                width: 40%;
+                text-align: right;
+            }
+
+        .subtotal td:last-child,
+        .tax td:last-child,
+        .total td:last-child {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Invoice for Reservation</h1>
+    <table>
+        <tr>
+            <th>Bill To:</th>
+            <td>{CustomerName}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>{CustomerAddress}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>{CustomerEmail}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>{CustomerPhoneNumber}</td>
+        </tr>
+    </table>
+    <div class="invoice-details">
+        <table>
+            <tr>
+                <td>Invoice No:</td>
+                <td>{InvoiceNumber}</td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td>{InvoiceDate}</td>
+            </tr>
+            <tr>
+                <td><b>Reservation Item</b></td>
+                <td><b>Item Qty</b></td>
+            </tr>
+            <tr>
+                <td>{ReservationItem1}</td>
+                <td>{ReservationQty1}</td>
+            </tr>
+            <tr>
+                <td>{ReservationItem2}</td>
+                <td>{ReservationQty2}</td>
+            </tr>
+        </table>
+    </div>
+    <table class="invoice-items">
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+        <tr class="subtotal">
+            <td>Subtotal:</td>
+            <td>{SubtotalAmount}</td>
+        </tr>
+        <tr class="tax">
+            <td>Tax:</td>
+            <td>{TaxAmount}</td>
+        </tr>
+        <tr class="total">
+            <td>Total:</td>
+            <td>{TotalAmount}</td>
+        </tr>
+    </table>
+    <p>Original Invoice</p>
+    <p>Thank you for choosing our services.
